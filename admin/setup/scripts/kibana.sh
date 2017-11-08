@@ -5,5 +5,7 @@ KIBANA_INDEX=${KIBANA_INDEX:-.kibana}
 SERVER_HOST=${SERVER_HOST:-localhost}
 sed -ri "s|^(\\#\\s*)?(elasticsearch.url:).*|\\2 '$ELASTICSEARCH_URL'|; \
                 s|^(\\#\\s*)?(server.host:).*|\\2 '$SERVER_HOST'|; \
+                s|^(\\#\\s*)?(elasticsearch.username:).*|\\2 '$ES_USERNAME'|; \
+                s|^(\\#\\s*)?(elasticsearch.password:).*|\\2 '$ES_PASSWORD'|; \
                 s|^(\\#\\s*)?(kibana.index:).*|\\2 '$KIBANA_INDEX'|; " /opt/kibana/config/kibana.yml
 exec su -l kibana -s /bin/bash -c "/usr/share/kibana/bin/kibana -c /opt/kibana/config/kibana.yml" > /opt/kibana/logs/kibana.log

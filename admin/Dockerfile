@@ -1,0 +1,21 @@
+#Base image
+FROM centos:7.4.1708
+LABEL maintainer="rajesh.jonnalagadda@phenompeople.com" \
+      Description="Kibana Docker image based on Centos 7" \
+	  License="Apache License 2.0" \
+	  Usage="docker run -td -p [HOST PORT NUMBER]:5601 -e ELASTICSEARCH_URL=[ELASTICSEARCH_URL:ELASTICSEARCH_PORT] -e KIBANA_INDEX=$USER -e SERVER_HOST=0.0.0.0"  \
+	  Version="5.6.2" \
+	  project="kibana"
+EXPOSE 5601
+ARG PACKAGE_VERSION=5.6.2
+ENV container docker \
+    PACKAGE_VERSION=${PACKAGE_VERSION}
+ADD kibana.repo /etc/yum.repos.d/kibana.repo
+RUN yum install -y -q kibana-${PACKAGE_VERSION}-1 && \
+    mkdir -p /opt/kibana/logs && \
+    touch /opt/kibana/logs/kibana.log && \
+    rm -rf /etc/yum.repos.d/kibana.repo && \
+    yum clean all
+
+ADD setup /opt/kibana
+ENTRYPOINT ["/opt/kibana/scripts/kibana.sh"]

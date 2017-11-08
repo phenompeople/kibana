@@ -1,7 +1,7 @@
 #Base image
 FROM centos:7.3.1611
-MAINTAINER Rajesh Jonnalagadda "admin.squad@phenompeople.com"
-LABEL Description="Kibana Docker image based on Centos 7" \
+LABEL maintainer="rajesh.jonnalagadda@phenompeople.com" \
+	  Description="Kibana Docker image based on Centos 7" \
 	  License="Apache License 2.0" \
 	  Usage="docker run -td -p [HOST PORT NUMBER]:5601 -e ELASTICSEARCH_URL=[ELASTICSEARCH_URL:ELASTICSEARCH_PORT] -e KIBANA_INDEX=$USER -e SERVER_HOST=0.0.0.0"  \
 	  Version="5.3.0" \

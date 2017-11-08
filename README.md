@@ -35,15 +35,28 @@ Above command runs kibana container with port 5601 mapped to host and connecting
 
 1. Please define below variables during run time to replace default values, variables defined during run time will take the highest priority, each variable should be passed differently with option -e 
 
-|Attribute name                     | Default Value             |
-|-----------------------------------|---------------------------|
-|ELASTICSEARCH_URL                  | htpp://localhost:9200     |
-|KIBANA_INDEX                       | .kibana                   |
-|SERVER_HOST                        | localhost                 |  
+|Attribute name        | Default Value             |
+|----------------------|---------------------------|
+|ELASTICSEARCH_URL     | htpp://localhost:9200     |
+|KIBANA_INDEX          | .kibana                   |
+|SERVER_HOST           | localhost                 |  
 
 For example
 
 ```$ docker run --restart=always --name kibana -p 5601:5601 -e ELASTICSEARCH_URL="http://<ES FQDN/IP ADDRESS>:9200" -e SERVER_HOST="0.0.0.0" -e KIBANA_INDEX="$USER" -td phenompeople/kibana```
+
+1. ES Cluster if protected with credentials add below additional variables  with option -e 
+
+|Attribute name       | Default Value    |
+|---------------------|------------------|
+|ES_USERNAME          | USERNAME         |
+|ES_PASSEWORD         | PASSWORD         |
+
+**Note:** These two variables are optional and commented out by default
+
+For example
+
+```$ docker run --restart=always --name kibana -p 5601:5601 -e ELASTICSEARCH_URL="http://<ES FQDN/IP ADDRESS>:9200" -e ES_USERNAME="admin" -e ES_PASSWORD="password" -e SERVER_HOST="0.0.0.0" -e KIBANA_INDEX="$USER" -td phenompeople/kibana```
 
 ## Maintainers
 

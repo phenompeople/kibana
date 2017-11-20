@@ -39,7 +39,8 @@ Above command runs kibana container with port 5601 mapped to host and connecting
 |----------------------|---------------------------|
 |ELASTICSEARCH_URL     | htpp://localhost:9200     |
 |KIBANA_INDEX          | .kibana                   |
-|SERVER_HOST           | localhost                 |  
+|SERVER_HOST           | localhost                 |
+|ES_REQUEST_TIMEOUT		  | 60000										| 
 
 For example
 

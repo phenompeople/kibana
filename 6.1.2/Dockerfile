@@ -1,4 +1,4 @@
-FROM phenompeople/centos-sunjre:APPLY
+FROM phenompeople/centos-sunjre
 LABEL maintainer="rajesh.jonnalagadda@phenompeople.com" \
 	  version="6.1.2" \
 	  project="kibana"

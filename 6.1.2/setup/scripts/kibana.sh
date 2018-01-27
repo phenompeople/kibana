@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -o nounset # Treat unset variables as an error
 ELASTICSEARCH_URL=${ELASTICSEARCH_URL:-http://localhost:9200}
-KIBANA_INDEX=${KIBANA_INDEX:-.kibana}
+KIBANA_INDEX=${KIBANA_INDEX:-.kibana-6}
 SERVER_HOST=${SERVER_HOST:-localhost}
 ES_REQUEST_TIMEOUT=${ES_REQUEST_TIMEOUT:-60000}
 sed -ri "s|^(\\#\\s*)?(elasticsearch.url:).*|\\2 '$ELASTICSEARCH_URL'|; \

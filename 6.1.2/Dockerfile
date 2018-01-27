@@ -13,10 +13,9 @@ RUN groupadd -g 405 kibana && \
 	tar -xzf /tmp/kibana.tar.gz -C /usr/local && \
 	ln -sf /usr/local/kibana-${KIBANA_VERSION}-linux-x86_64 ${APP_HOME} && \
 	mkdir -p /var/log/kibana /etc/kibana && \
-	chown -R kibana:kibana /usr/local/kibana-${KIBANA_VERSION}-linux-x86_64 && \
 	rm -rf /tmp/kibana.tar.gz && \
-    	touch /var/log/kibana/kibana.log
+    	touch /var/log/kibana/kibana.log 
 COPY setup/config/kibana.yml /etc/kibana/kibana.yml
 ADD setup/scripts /usr/local/kibana/
-USER kibana
+RUN chown -R kibana:kibana /usr/local/kibana-${KIBANA_VERSION}-linux-x86_64 /var/log/kibana /etc/kibana
 ENTRYPOINT ["/usr/local/kibana/kibana.sh"]

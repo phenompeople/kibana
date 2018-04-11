@@ -2,5 +2,4 @@ server.host: 0.0.0.0
 server.port: 5601
 elasticsearch.url: http://localhost:9200
 kibana.index: .kibana
-#elasticsearch.username: "USERNAME"
-#elasticsearch.password: "PASSWORD"
+elasticsearch.requestTimeout: 90000

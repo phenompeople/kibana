@@ -5,13 +5,14 @@
 
 ## Kibana 
 
-Dockerfiles for building Centos based Kibana images.
+Dockerfiles for building Centos based Kibana images. 
 
 ### Supported tags and respective Dockerfile links
 
 #### phenompeople/kibana
 
-* **`latest`		([6.1.2/Dockerfile](https://bitbucket.org/phenompeople/kibana/src/master/6.1.2/Dockerfile))**
+* **`latest`		([6.2.3/Dockerfile](https://bitbucket.org/phenompeople/kibana/src/master/6.2.3/Dockerfile))**
+* **`6.2.3`			([6.2.3/Dockerfile](https://bitbucket.org/phenompeople/kibana/src/master/6.2.3/Dockerfile))**
 * **`6.1.2` 		([6.1.2/Dockerfile](https://bitbucket.org/phenompeople/kibana/src/master/6.1.2/Dockerfile))**
 * **`5.6.2` 		([5.6.2/Dockerfile](https://bitbucket.org/phenompeople/kibana/src/master/5.6.2/Dockerfile))**
 * **`5.5.2` 		([5.5.2/Dockerfile](https://bitbucket.org/phenompeople/kibana/src/master/5.5.2/Dockerfile))**
@@ -21,6 +22,10 @@ Dockerfiles for building Centos based Kibana images.
 #### Pre-Requisites
 
 - install docker-engine [https://docs.docker.com/engine/installation/](https://docs.docker.com/engine/installation/)
+
+#### Whats New?
+
+Latest Image is having Logtrail plugin which helps to have live log viewer. LogTrail is a plugin for Kibana to view, analyze, search and tail log events from multiple hosts in realtime with devops friendly interface inspired by Papertrail. 
 
 ### How to use this image 
 
@@ -36,12 +41,12 @@ Above command runs kibana container with port 5601 mapped to host and connecting
 
 1. Please define below variables during run time to replace default values, variables defined during run time will take the highest priority, each variable should be passed differently with option -e 
 
-|Attribute name        | Default Value             |
-|----------------------|---------------------------|
-|ELASTICSEARCH_URL     | htpp://localhost:9200     |
-|KIBANA_INDEX          | .kibana                   |
-|SERVER_HOST           | localhost                 |
-|ES_REQUEST_TIMEOUT		  | 60000										| 
+|Attribute name        | Default Value            |
+|----------------------|--------------------------|
+|ELASTICSEARCH_URL     | htpp://localhost:9200    |
+|KIBANA_INDEX          | .kibana                  |
+|SERVER_HOST           | localhost                |
+|ES_REQUEST_TIMEOUT		  | 60000									  | 
 
 For example
 

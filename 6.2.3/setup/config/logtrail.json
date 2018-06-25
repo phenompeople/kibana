@@ -16,7 +16,7 @@
 		"max_events_to_keep_in_viewer": 5000,
 		"fields" : {
 		"mapping" : {
-		"timestamp" : "@timestamp",
+		"timestamp" : "timestamp8601",
 		"display_timestamp" : "@timestamp",
 		"hostname" : "beat.hostname",
 		"program": "program",

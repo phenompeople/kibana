@@ -1,9 +1,9 @@
 FROM centos:7.4.1708
 LABEL maintainer="rajesh.jonnalagadda@phenompeople.com" \
-	  version="6.3.1" \
+	  version="6.3.0" \
 	  project="kibana"
 EXPOSE 5601
-ARG KIBANA_VERSION=6.3.1
+ARG KIBANA_VERSION=6.3.0
 ENV container docker \
     PACKAGE_VERSION=${KIBANA_VERSION}
 ARG APP_HOME=/usr/local/kibana
@@ -19,6 +19,6 @@ RUN yum install -y -q wget && \
 COPY setup/config/kibana.yml /etc/kibana/kibana.yml
 ADD setup/scripts /usr/local/kibana/
 RUN chown -R kibana:kibana /usr/local/kibana-${KIBANA_VERSION}-linux-x86_64 /var/log/kibana /etc/kibana && \
-	/usr/local/kibana/bin/kibana-plugin install https://github.com/sivasamyk/logtrail/releases/download/v0.1.28/logtrail-6.3.0-0.1.29.zip
+	/usr/local/kibana/bin/kibana-plugin install https://github.com/sivasamyk/logtrail/releases/download/v0.1.29/logtrail-6.3.0-0.1.29.zip
 COPY setup/config/logtrail.json /usr/local/kibana/plugins/logtrail/logtrail.json
 ENTRYPOINT ["/usr/local/kibana/kibana.sh"]

@@ -7,12 +7,13 @@ ARG KIBANA_VERSION=6.5.0
 ENV container docker \
     PACKAGE_VERSION=${KIBANA_VERSION}
 ARG APP_HOME=/usr/local/kibana
-RUN yum install -y -q wget shadow-utils tar gzip&& \
+RUN yum install -y -q util-linux wget shadow-utils tar gzip&& \
 	groupadd -g 405 kibana && \
 	useradd -u 405 -g 405 kibana && \
 	wget -q -O /tmp/kibana.tar.gz https://artifacts.elastic.co/downloads/kibana/kibana-${KIBANA_VERSION}-linux-x86_64.tar.gz && \
 	tar -xzf /tmp/kibana.tar.gz -C /usr/local && \
 	ln -sf /usr/local/kibana-${KIBANA_VERSION}-linux-x86_64 ${APP_HOME} && \
+	chown -R kibana:kibana /usr/local/kibana-${KIBANA_VERSION}-linux-x86_64 && \
 	mkdir -p /var/log/kibana /etc/kibana && \
 	rm -rf /tmp/kibana.tar.gz && \
     touch /var/log/kibana/kibana.log 

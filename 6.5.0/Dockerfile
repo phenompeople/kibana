@@ -13,10 +13,12 @@ RUN yum install -y -q util-linux wget shadow-utils tar gzip&& \
 	wget -q -O /tmp/kibana.tar.gz https://artifacts.elastic.co/downloads/kibana/kibana-${KIBANA_VERSION}-linux-x86_64.tar.gz && \
 	tar -xzf /tmp/kibana.tar.gz -C /usr/local && \
 	ln -sf /usr/local/kibana-${KIBANA_VERSION}-linux-x86_64 ${APP_HOME} && \
-	chown -R kibana:kibana /usr/local/kibana-${KIBANA_VERSION}-linux-x86_64 && \
 	mkdir -p /var/log/kibana /etc/kibana && \
 	rm -rf /tmp/kibana.tar.gz && \
     touch /var/log/kibana/kibana.log 
 COPY setup/config/kibana.yml /etc/kibana/kibana.yml
 ADD setup/scripts /usr/local/kibana/
+RUN chown -R kibana:kibana /usr/local/kibana-${KIBANA_VERSION}-linux-x86_64 /var/log/kibana /etc/kibana && \
+	/usr/local/kibana/bin/kibana-plugin install https://github.com/sivasamyk/logtrail/releases/download/v0.1.30/logtrail-6.5.0-0.1.30.zip
+COPY setup/config/logtrail.json /usr/local/kibana/plugins/logtrail/logtrail.json	
 ENTRYPOINT ["/usr/local/kibana/kibana.sh"]

@@ -1,7 +1,4 @@
-[![Docker Automated build](https://img.shields.io/docker/automated/phenompeople/kibana.svg?style=plastic)](https://hub.docker.com/r/phenompeople/kibana/)
-[![Docker Build Status](https://img.shields.io/docker/build/phenompeople/kibana.svg?style=plastic)](https://hub.docker.com/r/phenompeople/kibana/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/phenompeople/kibana.svg?style=plastic)](https://hub.docker.com/r/phenompeople/kibana/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![dockeri.co](http://dockeri.co/image/phenompeople/kibana)](https://registry.hub.docker.com/phenompeople/kibana/)
 
 ## Kibana 
 
@@ -11,11 +8,10 @@ Dockerfiles for building Centos based Kibana images.
 
 #### phenompeople/kibana
 
-* **`latest`		([6.5.0/Dockerfile](https://bitbucket.org/phenompeople/kibana/src/master/6.5.0/Dockerfile))**
-* **`6.5.0` 		([6.5.0/Dockerfile](https://bitbucket.org/phenompeople/kibana/src/master/6.5.0/Dockerfile))**
-* **`6.3.0` 		([6.3.0/Dockerfile](https://bitbucket.org/phenompeople/kibana/src/master/6.3.0/Dockerfile))**
-* **`5.6.9` 		([5.6.9/Dockerfile](https://bitbucket.org/phenompeople/kibana/src/master/5.6.9/Dockerfile))**
-* **`5.1.2` 		([5.1.2/Dockerfile](https://bitbucket.org/phenompeople/kibana/src/master/5.1.2/Dockerfile))**
+* **`latest`		([6.5.0/Dockerfile](https://github.com/phenompeople/kibana/blob/master/7.2.0/Dockerfile))**
+* **`7.2.0`			([7.2.0/Dockerfile](https://github.com/phenompeople/kibana/blob/master/7.2.0/Dockerfile))**
+* **`6.5.0` 		([6.5.0/Dockerfile](https://github.com/phenompeople/kibana/blob/master/6.5.0/Dockerfile))**
+* **`5.6.9` 		([5.6.9/Dockerfile](https://github.com/phenompeople/kibana/blob/master/5.6.9/Dockerfile))**
 
 #### Pre-Requisites
 

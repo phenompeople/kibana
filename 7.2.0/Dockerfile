@@ -12,6 +12,7 @@ RUN yum install -y -q util-linux wget shadow-utils tar gzip&& \
 	useradd -u 405 -g 405 kibana && \
 	wget -q -O /tmp/kibana.tar.gz https://artifacts.elastic.co/downloads/kibana/kibana-${KIBANA_VERSION}-linux-x86_64.tar.gz && \
 	tar -xzf /tmp/kibana.tar.gz -C /usr/local && \
+	ln -sf /usr/local/kibana-${KIBANA_VERSION}-linux-x86_64 ${APP_HOME} && \
 	mkdir -p /var/log/kibana /etc/kibana && \
 	rm -rf /tmp/kibana.tar.gz && \
     touch /var/log/kibana/kibana.log 

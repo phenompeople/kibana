@@ -1,4 +1,4 @@
-[![dockeri.co](http://dockeri.co/image/phenompeople/kibana)](https://registry.hub.docker.com/phenompeople/kibana/)
+[![dockeri.co](http://dockeri.co/image/phenompeople/kibana)](https://registry.hub.docker.com/phenompeople/kibana)
 
 ## Kibana 
 

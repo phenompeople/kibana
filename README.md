@@ -8,7 +8,7 @@ Dockerfiles for building Centos based Kibana images.
 
 #### phenompeople/kibana
 
-* **`latest`		([6.5.0/Dockerfile](https://github.com/phenompeople/kibana/blob/master/7.2.0/Dockerfile))**
+* **`latest`		([7.2.0/Dockerfile](https://github.com/phenompeople/kibana/blob/master/7.2.0/Dockerfile))**
 * **`7.2.0`			([7.2.0/Dockerfile](https://github.com/phenompeople/kibana/blob/master/7.2.0/Dockerfile))**
 * **`6.5.0` 		([6.5.0/Dockerfile](https://github.com/phenompeople/kibana/blob/master/6.5.0/Dockerfile))**
 * **`5.6.9` 		([5.6.9/Dockerfile](https://github.com/phenompeople/kibana/blob/master/5.6.9/Dockerfile))**
